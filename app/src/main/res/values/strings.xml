@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GestionDeTelephone</string>
+    <string name="prenom">prenom</string>
+    <string name="welcome_to_smartphones_assistance">Welcome to smartPhones assistance</string>
+    <string name="bienvenue_a_Smart_phones_assisstance">bienvenue a Smart phones assisstance</string>
+    <string name="nom_d_utilisateur">Nom d\'utilisateur</string>
+</resources>
