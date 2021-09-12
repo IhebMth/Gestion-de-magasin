@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "62181402649",
+    "project_id": "fir-phone-auth-1c532",
+    "storage_bucket": "fir-phone-auth-1c532.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62181402649:android:08196018c23ced28242288",
+        "android_client_info": {
+          "package_name": "com.example.gestiondetelephone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62181402649-pj4mmhsgh1rdacu1g4ibnioqifqcg5qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8pqeG6IZEWDjmTsdf0WjXpr_TlNyHM80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62181402649-pj4mmhsgh1rdacu1g4ibnioqifqcg5qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
