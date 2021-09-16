@@ -9,11 +9,11 @@
 
     <ImageView
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="193dp"
         android:layout_marginTop="30dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/ic_launcher"
-        android:contentDescription="@string/string_company_logo" />
+        android:contentDescription="@string/string_company_logo"
+        android:src="@drawable/verify" />
 
     <LinearLayout
         android:layout_width="wrap_content"
