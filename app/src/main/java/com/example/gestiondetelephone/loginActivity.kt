@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                Toast.makeText(applicationContext, "Failed", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Please enter a valid number", Toast.LENGTH_LONG).show()
             }
 
             override fun onCodeSent(

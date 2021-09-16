@@ -54,6 +54,7 @@
             android:background="@drawable/edit_text_bg"
             android:drawableLeft="@android:drawable/sym_action_call"
             android:hint="numero de telephone"
+            android:fontFamily="sans-serif-black"
             android:onClick="SIGNUP"
             android:paddingStart="10dp"
             android:paddingLeft="20dp"
