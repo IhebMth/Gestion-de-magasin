@@ -1,8 +1,16 @@
+<?xml version="1.0"?>
 <resources>
-    <string name="app_name">GestionDeTelephone</string>
-    <string name="prenom">prenom</string>
-    <string name="welcome_to_smartphones_assistance">Welcome to smartPhones assistance</string>
-    <string name="bienvenue_a_Smart_phones_assisstance">bienvenue a Smart phones assisstance</string>
-    <string name="nom_d_utilisateur">Nom d\'utilisateur</string>
-    <string name="verify">Verify</string>
+
+    <string name="app_name">VerificationScreen</string>
+
+    <string name="string_dash">-</string>
+
+    <string name="string_company_logo">Company\'s Logo</string>
+
+    <string name="string_successful">Verification code matched Successfully</string>
+
+    <string name="string_unsuccessful">Verification code is incorrect</string>
+    <string name="verify">verify</string>
+    <string name="nom_d_utilisateur">nom_d_utilisateur</string>
+
 </resources>

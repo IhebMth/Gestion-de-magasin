@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_editor_absoluteX="400dp"
-        app:layout_editor_absoluteY="400dp" />
+        app:layout_editor_absoluteY="400dp"
+        android:onClick="BackToLogin"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

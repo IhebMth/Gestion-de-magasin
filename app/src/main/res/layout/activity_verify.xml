@@ -1,144 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-  >
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:weightSum="5">
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_launcher"
+        android:contentDescription="@string/string_company_logo" />
 
-    <EditText
-        android:id="@+id/otpGiven"
-        android:layout_width="56dp"
-        android:layout_height="74dp"
-        android:background="@drawable/edit_text_bg"
-        android:hint="x"
-        android:paddingStart="20dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="15dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/verifyBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
 
-    <EditText
-        android:id="@+id/b"
-        android:layout_width="56dp"
-        android:layout_height="74dp"
-        android:background="@drawable/edit_text_bg"
-        android:paddingStart="20dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="15dp"
-        android:hint="x"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/verifyBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintStart_toEndOf="@+id/otpGiven"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+        <EditText
+            android:id="@+id/codeOne"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_box"
+            android:cursorVisible="false"
+            android:gravity="center"
+            android:hint="@string/string_dash"
+            android:inputType="number"
+            android:maxLength="1" />
 
-    <EditText
-        android:id="@+id/c"
-        android:layout_width="56dp"
-        android:layout_height="74dp"
-        android:background="@drawable/edit_text_bg"
-        android:paddingStart="20dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="15dp"
-        android:hint="x"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/verifyBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toEndOf="@+id/b"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+        <EditText
+            android:id="@+id/codeTwo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
 
+            android:background="@drawable/bg_box"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="@string/string_dash"
+            android:inputType="number"
+            android:maxLength="1" />
 
-    <EditText
-        android:id="@+id/d"
-        android:layout_width="56dp"
-        android:layout_height="74dp"
-        android:background="@drawable/edit_text_bg"
-        android:paddingStart="20dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="15dp"
-        android:hint="x"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/verifyBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toEndOf="@+id/c"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+        <EditText
+            android:id="@+id/codeThree"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
 
-    <EditText
-        android:id="@+id/e"
-        android:layout_width="56dp"
-        android:layout_height="74dp"
-        android:background="@drawable/edit_text_bg"
-        android:paddingStart="20dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="15dp"
-        android:hint="x"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/verifyBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toEndOf="@+id/d"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+            android:background="@drawable/bg_box"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="@string/string_dash"
+            android:inputType="number"
+            android:maxLength="1" />
 
-    <EditText
-        android:id="@+id/f"
-        android:layout_width="56dp"
-        android:layout_height="74dp"
-        android:background="@drawable/edit_text_bg"
-        android:paddingStart="20dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="15dp"
-        android:hint="x"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/verifyBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.304"
-        app:layout_constraintStart_toEndOf="@+id/e"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+        <EditText
+            android:id="@+id/codeFour"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:background="@drawable/bg_box"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="@string/string_dash"
+            android:inputType="number"
+            android:maxLength="1" />
+
+        <EditText
+            android:id="@+id/codeFive"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_box"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="@string/string_dash"
+            android:inputType="number"
+            android:maxLength="1" />
+
+        <EditText
+            android:id="@+id/codeSix"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_box"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="@string/string_dash"
+            android:inputType="number"
+            android:maxLength="1" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/verifyBtn"
-        android:layout_width="317dp"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:layout_width="315dp"
         android:layout_height="49dp"
         android:background="@drawable/edit_text_bg"
         android:onClick="@string/verify"
-
         android:text="@string/verify"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:circularflow_angles="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72"
-        app:layout_constraintWidth_percent=".8" />
+        android:textStyle="bold" />
+</LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+

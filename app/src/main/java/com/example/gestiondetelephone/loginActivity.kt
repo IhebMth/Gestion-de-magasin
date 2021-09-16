@@ -1,5 +1,6 @@
 package com.example.gestiondetelephone
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,10 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
@@ -90,13 +88,15 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun SIGNUP(view: View) {
+
+
+    fun signUp(view: View) {
          val intent = Intent(this, SignUpActivity::class.java)
          startActivity(intent)
          Toast.makeText(this, "hello", Toast.LENGTH_LONG).show()
      }
 
-     fun LOGIN(view: View) {
+     fun login(view: View) {
          val intent = Intent(this, homeActivity::class.java)
          startActivity(intent)
          Toast.makeText(this, "let's do this", Toast.LENGTH_LONG).show()
