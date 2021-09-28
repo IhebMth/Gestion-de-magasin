@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".loginActivity">
 
     <ImageView
         android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="140dp"
         android:background="@drawable/blue"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,115 +20,112 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:background="@drawable/vie_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".78"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vie_bg"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0" />
-
-        <EditText
-            android:id="@+id/numTel"
-            android:layout_width="255dp"
-            android:layout_height="86dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableLeft="@android:drawable/sym_action_call"
-            android:hint="numero de telephone"
-            android:fontFamily="sans-serif-black"
-            android:onClick="SIGNUP"
-            android:paddingStart="10dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="10dp"
-            android:textSize="20sp"
-            app:flow_firstHorizontalBias=".5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.797"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tab_layout"
-            app:layout_constraintVertical_bias="0.499"
-            app:layout_constraintWidth_percent=".8" />
-
-        <EditText
-            android:layout_width="94dp"
-            android:layout_height="93dp"
-            android:text="+216"
-            android:background="@drawable/edit_text_bg"
-            android:drawableLeft="@android:drawable/sym_action_call"
-            android:paddingStart="10dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="10dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/numTel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_bg"
-            android:onClick="login"
-            android:text="LOGIN"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numTel"
-            app:layout_constraintWidth_percent=".8" />
-
-        <Button
-            android:id="@+id/signUpButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_bg"
-            android:onClick="signUp"
-            android:text="SIGN UP"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton"
-            app:layout_constraintWidth_percent=".8" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/imageFilterView"
         android:layout_width="60dp"
         android:layout_height="80dp"
         android:src="@drawable/smartphone"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background"
-        app:layout_constraintVertical_bias=".3" />
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="210dp"
+        android:layout_height="450dp"
+        android:background="@drawable/ic_login_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.132">
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="142dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="166dp"
+            android:layout_marginEnd="18dp"
+            android:background="?attr/actionBarItemBackground"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Register"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="50dp"
+            android:text="LOGIN"
+            android:textColor="@color/teal_700"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/numTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/sym_action_call"
+                android:drawablePadding="20dp"
+                android:hint="Entrez votre numéro de téléphone"
+                android:inputType="number" />
+
+
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/fastScrollTrackDrawable"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintHorizontal_bias="0.497"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
