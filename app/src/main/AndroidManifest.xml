@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GestionDeTelephone">
         <activity
+            android:name=".listeTel"
+            android:exported="true" />
+        <activity
+            android:name=".ajouterTelephone"
+            android:exported="true" />
+        <activity
             android:name=".Verify"
             android:exported="true" />
         <activity

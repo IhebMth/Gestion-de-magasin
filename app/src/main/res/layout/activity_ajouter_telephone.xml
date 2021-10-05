@@ -6,4 +6,153 @@
     android:layout_height="match_parent"
     tools:context=".ajouterTelephone">
 
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="410dp"
+        android:layout_height="140dp"
+        android:background="@drawable/blue"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".27"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageFilterView"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:src="@drawable/smartphone"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="210dp"
+        android:layout_height="450dp"
+        android:background="@drawable/ic_login_bg"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/listeTel"
+            android:layout_width="197dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="1dp"
+            android:background="?attr/actionBarItemBackground"
+
+            android:text="liste de téléphone"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toStartOf="@+id/listeTel"
+            android:text="Ajouter téléphone"
+            android:textColor="@color/teal_700"
+            android:textSize="15sp"
+             />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageFilterView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nomTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:drawablePadding="20dp"
+                android:hint="Entrez le nom de téléphone"
+                android:inputType="text" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sysEx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:drawablePadding="20dp"
+                android:hint="Entrez le Systeme d'exploitation"
+                android:inputType="text" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="20dp"
+                android:hint="Entrez la mémoire vive (RAM)"
+                android:inputType="text" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="20dp"
+                android:hint="Entrez la capacité du téléphone"
+                android:inputType="text" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/ajouterButton"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/fastScrollTrackDrawable"
+        android:text="Ajouter"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintHorizontal_bias="0.497"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

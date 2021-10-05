@@ -12,5 +12,8 @@
     <string name="string_unsuccessful">Verification code is incorrect</string>
     <string name="verify">verify</string>
     <string name="nom_d_utilisateur">nom_d_utilisateur</string>
+    <string name="ajouter_t_l_phone">Ajouter téléphone</string>
+    <string name="entrez_le_nom_du_t_l_phone">Entrez le nom du téléphone</string>
+    <string name="Entrez_le_nom_du_t_l_phone" />
 
 </resources>

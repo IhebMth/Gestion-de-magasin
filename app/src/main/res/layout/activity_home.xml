@@ -4,22 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".homeActivity">
 
-    <Button
+    <View
+        android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-        android:text="Home Page"
-        android:textSize="20sp"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="414dp"
+        android:layout_height="174dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.916">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="60dp"
+            android:paddingStart="120dp"
+            android:paddingLeft="50dp"
+            android:paddingTop="30dp"
+            android:paddingEnd="40dp"
+            android:text="Bienvenue "
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="italic"
+            app:layout_constraintHorizontal_bias="@integer/material_motion_duration_long_1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/ajouterTel"
+        android:layout_width="164dp"
+        android:layout_height="82dp"
+        android:background="?android:attr/fastScrollTrackDrawable"
+        android:text="Ajouter téléphone"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.488" />
+
+    <Button
+        android:id="@+id/listeTel"
+        android:layout_width="164dp"
+        android:layout_height="82dp"
+        android:background="?android:attr/fastScrollTrackDrawable"
+        android:text="liste Téléphone"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/ajouterTel"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.488" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="34dp"
+        app:cardCornerRadius="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_editor_absoluteX="400dp"
-        app:layout_editor_absoluteY="400dp"
-        android:onClick="BackToLogin"/>
-
+        app:layout_constraintTop_toTopOf="@+id/view">
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
