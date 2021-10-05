@@ -7,6 +7,8 @@
     android:padding="30dp"
     android:weightSum="5">
 
+
+
     <ImageView
         android:layout_width="150dp"
         android:layout_height="193dp"

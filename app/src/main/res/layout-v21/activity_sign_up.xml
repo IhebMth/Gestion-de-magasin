@@ -38,7 +38,7 @@
             android:paddingLeft="10dp"
             android:paddingTop="30dp"
             android:paddingEnd="40dp"
-            android:text="Créer Un Compte"
+            android:text="Create an account"
             android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="italic"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="6dp"
-                android:hint="Nom"
+                android:hint="First name"
                 android:inputType="text" />
 
 
@@ -83,8 +83,8 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="6dp"
-                android:hint="prenom"
-                android:inputType="textEmailAddress" />
+                android:hint="Last name"
+                android:inputType="text" />
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="6dp"
-                android:hint="Nom d'utilisateur"
+                android:hint="User name"
                 android:inputType="text" />
 
 
@@ -111,9 +111,9 @@
                 android:id="@+id/numTel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@android:drawable/sym_action_call"
+                android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="6dp"
-                android:hint="Numéro de téléphone"
+                android:hint="Phone number"
                 android:inputType="number" />
 
         </LinearLayout>

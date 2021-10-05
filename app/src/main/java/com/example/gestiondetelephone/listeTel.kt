@@ -27,7 +27,7 @@ class listeTel : AppCompatActivity() {
         getUserData()
 
 
-        button.setOnClickListener {
+        ajouterT.setOnClickListener{
             var i = Intent(this,ajouterTelephone::class.java)
             startActivity(i)
             finish()
