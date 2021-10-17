@@ -55,7 +55,7 @@
         android:layout_width="164dp"
         android:layout_height="82dp"
         android:background="?android:attr/fastScrollTrackDrawable"
-        android:text="Add phone "
+        android:text="Add     phone "
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -66,12 +66,14 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         app:layout_constraintVertical_bias="0.488" />
 
+
+
     <Button
         android:id="@+id/listeTel"
         android:layout_width="164dp"
         android:layout_height="82dp"
         android:background="?android:attr/fastScrollTrackDrawable"
-        android:text="phones list"
+        android:text="List Of Phones"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -81,6 +83,22 @@
         app:layout_constraintStart_toEndOf="@+id/ajouterTel"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         app:layout_constraintVertical_bias="0.488" />
+
+    <Button
+        android:id="@+id/signOutbtn"
+        android:layout_width="164dp"
+        android:layout_height="82dp"
+        android:background="?attr/actionBarDivider"
+        android:text="Sign Out "
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.809" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"

@@ -29,6 +29,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var database: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -107,8 +108,7 @@ class SignUpActivity : AppCompatActivity() {
 
                 }
             }
-            val intent = Intent(this, Verify::class.java)
-            startActivity(intent)
+
         }
 
         auth = FirebaseAuth.getInstance()
@@ -129,14 +129,7 @@ class SignUpActivity : AppCompatActivity() {
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                //auth.signInWithCredential(credential).addOnCompleteListener() {
-                Log.d(TAG, "onVerificationCompleted:$credential")
-                signInWithPhoneAuthCredential(credential)
 
-
-
-                startActivity(Intent(applicationContext, homeActivity::class.java))
-                finish()
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
@@ -156,6 +149,7 @@ class SignUpActivity : AppCompatActivity() {
                 var intent = Intent(applicationContext, Verify::class.java)
                 intent.putExtra("storedVerificationId", storedVerificationId)
                 startActivity(intent)
+                finishAffinity()
             }
         }
     }
@@ -173,23 +167,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
 
-    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Log.d(TAG, "signInWithCredential:success")
-                    startActivity(Intent (this, MainActivity::class.java))
-                    finish()
-                } else {
-                    // Sign in failed, display a message and update the UI
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    if (task.exception is FirebaseAuthInvalidCredentialsException) {
-                   Toast.makeText(baseContext, "Sign up failed.", Toast.LENGTH_LONG).show()
-                    }
-                    // Update UI
-                }
-            }
-    }
+
 
     private fun sendVerificationcode(number: String) {
         val options = PhoneAuthOptions.newBuilder(auth)
@@ -201,10 +179,7 @@ class SignUpActivity : AppCompatActivity() {
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
-    }
+
 
 
 }

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        auth = FirebaseAuth.getInstance()
+
 
 
         signUpButton.setOnClickListener {
@@ -34,22 +34,25 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         auth = FirebaseAuth.getInstance()
         var currentUser = auth.currentUser
 
 
-        if (currentUser != null) {
-            startActivity(Intent(applicationContext, homeActivity::class.java))
-            finish()
-        }
+
+
 
     loginButton.setOnClickListener {
+
+        val intent1 = Intent( this, updateUser::class.java)
+        intent1.putExtra("numTel", numTel.text.toString().trim())
+
         var number = numTel.text.toString()
         when {
 
             TextUtils.isEmpty(number.trim { it <= ' ' }) -> {
                 Toast.makeText(this,
-                    "please enter mobile numner",
+                    "please enter mobile number",
                     Toast.LENGTH_SHORT).show()
 
             }
@@ -66,18 +69,11 @@ class MainActivity : AppCompatActivity() {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
 
-                Log.d(TAG, "onVerificationCompleted:$credential")
 
-                    signInWithPhoneAuthCredential(credential)
-
-
-                startActivity(Intent(applicationContext, homeActivity::class.java))
-                finish()
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                Toast.makeText(applicationContext, "Please enter a valid number", Toast.LENGTH_LONG)
-                    .show()
+                Toast.makeText(applicationContext, "Please enter a valid number", Toast.LENGTH_LONG).show()
             }
 
 
@@ -91,8 +87,10 @@ class MainActivity : AppCompatActivity() {
                 resendToken = token
 
                 var intent = Intent(applicationContext, Verify::class.java)
+                intent.putExtra("NumTel", numTel.text.toString().trim() )
                 intent.putExtra("storedVerificationId", storedVerificationId)
                 startActivity(intent)
+                finishAffinity()
             }
         }
 
@@ -105,47 +103,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val firebaseUser: FirebaseUser = task.result!!.user!!
-                    Toast.makeText(
-                        this,
-                        "You are logged in successfully",
-                    Toast.LENGTH_SHORT).show()
-
-                    startActivity(Intent(applicationContext, homeActivity::class.java))
-                    finish()
-// ...
-                } else {
-                        Toast.makeText(
-                            this,
-                            task.exception!!.message.toString(),
-                        Toast.LENGTH_SHORT).show()
-
-                    if (task.exception is FirebaseAuthInvalidCredentialsException) {
-// The verification code entered was invalid
-                        Toast.makeText(this, "Invalid OTP", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-
-
-
-    }
-
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        updateUi(currentUser)
-    }
-
-    private fun updateUi(currentUser: FirebaseUser?) {
-
-    }
 
 
     private fun login() {

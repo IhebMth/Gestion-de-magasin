@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/background"
-        android:layout_width="410dp"
-        android:layout_height="140dp"
-        android:background="@drawable/blue"
+        android:layout_width="413dp"
+        android:layout_height="157dp"
+        android:background="@drawable/black"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,69 +20,76 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/imageFilterView"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
-        android:src="@drawable/smartphone"
+    <Button
+        android:id="@+id/homeSc"
+        android:layout_width="189dp"
+        android:layout_height="56dp"
+        android:background="?attr/colorControlHighlight"
+        android:text="Home screen"
+
         app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.995"
         app:layout_constraintStart_toStartOf="@+id/background"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/background"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userList"
+        android:layout_width="420dp"
+        android:layout_height="591dp"
+        android:background="@drawable/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/background" />
+
+
+
+
+    <Button
+        android:id="@+id/listT"
+        android:layout_width="189dp"
+        android:layout_height="56dp"
+        android:background="?attr/colorControlHighlight"
+        android:text="List of Phones"
+
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/background"
+        app:layout_constraintVertical_bias="0.976" />
 
     <View
         android:id="@+id/view"
-        android:layout_width="210dp"
-        android:layout_height="450dp"
-        android:background="@drawable/ic_login_bg"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="414dp"
+        android:layout_height="580dp"
+        android:background="@drawable/black"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/background"
         app:layout_constraintVertical_bias="0.0" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:padding="13sp"
+        android:paddingStart="145sp"
+        android:text="Add Phone"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/userList"
         app:layout_constraintTop_toBottomOf="@+id/background"
-        app:layout_constraintVertical_bias="0.0">
-
-        <Button
-            android:id="@+id/listeTel"
-            android:layout_width="197dp"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="1dp"
-            android:background="?attr/actionBarItemBackground"
-
-            android:text="liste de téléphone"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="172dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="22dp"
-            android:layout_marginBottom="15dp"
-            android:layout_toStartOf="@+id/listeTel"
-            android:text="Ajouter téléphone"
-            android:textColor="@color/teal_700"
-            android:textSize="15sp"
-             />
-
-    </RelativeLayout>
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -93,8 +100,8 @@
         app:cardCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageFilterView">
+        app:layout_constraintStart_toStartOf="@id/background"
+        app:layout_constraintTop_toBottomOf="@+id/background">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,9 +151,11 @@
         android:id="@+id/ajouterButton"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/fastScrollTrackDrawable"
-        android:text="Ajouter"
+
+        android:text="Add"
+        android:background="?attr/scrimBackground"
         android:textColor="@android:color/white"
+        android:backgroundTint="?attr/actionMenuTextColor"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"

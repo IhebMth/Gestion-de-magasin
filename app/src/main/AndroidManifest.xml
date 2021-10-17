@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GestionDeTelephone">
         <activity
+            android:name=".updateUser"
+            android:exported="true" />
+        <activity
             android:name=".listeTel"
             android:exported="true" />
         <activity

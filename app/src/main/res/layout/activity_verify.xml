@@ -4,16 +4,20 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="30dp"
-    android:weightSum="5">
+    android:padding="0dp"
+    android:weightSum="5"
+    android:background="@drawable/ic_register_bg">
 
 
 
     <ImageView
+
         android:layout_width="150dp"
         android:layout_height="193dp"
         android:layout_marginTop="30dp"
         android:adjustViewBounds="true"
+        android:visibility="visible"
+        android:layout_gravity="center"
         android:contentDescription="@string/string_company_logo"
         android:src="@drawable/verify" />
 
@@ -108,11 +112,29 @@
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:layout_width="315dp"
         android:layout_height="49dp"
-        android:background="@drawable/edit_text_bg"
+        android:textColor="@color/white"
+        android:background="@color/design_default_color_secondary_variant"
         android:onClick="@string/verify"
         android:text="@string/verify"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+
+
+
+
+    <Button
+        android:id="@+id/homePage"
+        android:layout_width="315dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:background="@color/design_default_color_secondary_variant"
+        android:onClick="logIn"
+        android:text="Log In"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 </LinearLayout>
 
 

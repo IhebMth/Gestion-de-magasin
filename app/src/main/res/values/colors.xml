@@ -10,5 +10,6 @@
     <color name="colorPrimary">#009688</color>
     <color name="colorAccent">#36F49B</color>
     <color name="color1">#59F0F3</color>
+    <color name = "color_view">#E32929</color>
     <color name="grey">#777A7A</color>
 </resources>

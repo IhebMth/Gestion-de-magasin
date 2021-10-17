@@ -24,8 +24,13 @@ class listeTel : AppCompatActivity() {
         userRecyclerview.setHasFixedSize(true)
         userRecyclerview.adapter = MyAdapter
 
-        getUserData()
+        getTelData()
 
+        homeSc.setOnClickListener{
+            var i = Intent(this,homeActivity::class.java)
+            startActivity(i)
+            finish()
+        }
 
         ajouterT.setOnClickListener{
             var i = Intent(this,ajouterTelephone::class.java)
@@ -36,7 +41,7 @@ class listeTel : AppCompatActivity() {
 
     }
 
-    private fun getUserData() {
+    private fun getTelData() {
 
         dbref = FirebaseDatabase.getInstance().getReference("Tel")
 
@@ -47,11 +52,11 @@ class listeTel : AppCompatActivity() {
                 if (snapshot.exists()){
                     userArrayList.clear()
                     MyAdapter.notifyDataSetChanged()
-                    for (userSnapshot in snapshot.children){
+                    for (telSnapshot in snapshot.children){
 
 
-                        val user = userSnapshot.getValue(Tel::class.java)
-                        userArrayList.add(user!!)
+                        val tel = telSnapshot.getValue(Tel::class.java)
+                        userArrayList.add(tel!!)
 
                     }
 

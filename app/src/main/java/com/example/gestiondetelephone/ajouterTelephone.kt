@@ -22,8 +22,14 @@ class ajouterTelephone : AppCompatActivity() {
         binding = ActivityAjouterTelephoneBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.listeTel.setOnClickListener {
-            startActivity(Intent(this, listeTel::class.java))
+
+
+        binding.listT.setOnClickListener {
+            startActivity(Intent(this, com.example.gestiondetelephone.listeTel::class.java))
+        }
+
+        binding.homeSc.setOnClickListener {
+            startActivity(Intent(this,homeActivity::class.java))
         }
 
         binding.ajouterButton.setOnClickListener {

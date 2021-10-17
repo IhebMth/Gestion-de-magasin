@@ -1,28 +1,32 @@
 package com.example.gestiondetelephone
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telephony.PhoneNumberUtils.formatNumber
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.KeyEvent
 import android.view.WindowManager
 import android.widget.EditText
 
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_verify.*
 import java.lang.StringBuilder
 import java.text.DecimalFormat
 
 class Verify : AppCompatActivity(), TextWatcher {
-
+    val userArrayList = mutableListOf<User>()
     lateinit var auth: FirebaseAuth
-
+    lateinit var  number : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verify)
@@ -31,6 +35,8 @@ class Verify : AppCompatActivity(), TextWatcher {
 
         auth = FirebaseAuth.getInstance()
         val storedVerificationId = intent.getStringExtra("storedVerificationId")
+        number = intent.getStringExtra("NumTel").toString()
+
 
         verifyBtn.setOnClickListener {
             var otp1 = codeOne.text.toString().trim()
@@ -46,7 +52,12 @@ class Verify : AppCompatActivity(), TextWatcher {
                     storedVerificationId.toString(), otp
                 )
                 signInWithPhoneAuthCredential(credential)
-            } else {
+            }else if (otp != storedVerificationId)
+            {
+                Toast.makeText(this, "Enter a valid OTP", Toast.LENGTH_SHORT).show()
+            }
+
+            else {
                 Toast.makeText(this, "Enter OTP", Toast.LENGTH_SHORT).show()
             }
 
@@ -63,11 +74,22 @@ class Verify : AppCompatActivity(), TextWatcher {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(applicationContext, homeActivity::class.java))
-                    finish()
+
+                    Log.d(TAG, "onVerificationCompleted:$credential")
+                    Toast.makeText(
+                        this,
+                        "You are logged in successfully",
+                        Toast.LENGTH_SHORT).show()
+                    getUserData()
+
 // ...
-                } else {
-// Sign in failed, display a message and update the UI
+                } else  {
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Toast.makeText(
+                        this,
+                        task.exception!!.message.toString(),
+                        Toast.LENGTH_SHORT).show()
+
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
 // The verification code entered was invalid
                         Toast.makeText(this, "Invalid OTP", Toast.LENGTH_SHORT).show()
@@ -76,7 +98,55 @@ class Verify : AppCompatActivity(), TextWatcher {
             }
 
 
+
     }
+
+
+    private fun getUserData() {
+
+        var dbref = FirebaseDatabase.getInstance().getReference("Tel").child("Users")
+
+        dbref.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) = if (snapshot.exists()){
+                userArrayList.clear()
+
+                for (userSnapshot in snapshot.children){
+                    for (data in userArrayList)
+                    {
+
+                        {
+
+                        }
+                    }
+                    
+
+                }
+
+
+
+
+            }else {
+
+                var intent = Intent(applicationContext, updateUser::class.java)
+                startActivity(intent)
+                Toast.makeText(applicationContext, "you have missing info you need to need complete it here", Toast.LENGTH_SHORT).show()
+
+            }
+
+            override fun onCancelled(error: DatabaseError){
+                if (error != null )
+                {
+
+                }
+            }
+
+
+        })
+
+    }
+
+
 
     private fun init() {
         codeOne.requestFocus()
@@ -182,6 +252,11 @@ class Verify : AppCompatActivity(), TextWatcher {
         editText.isFocusableInTouchMode = true
         editText.setText("")
         editText.requestFocus()
+    }
+
+    fun logIn(view: android.view.View) {
+
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
 
