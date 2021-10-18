@@ -3,32 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable-v24/btn_top.xml" value="0.1287037037037037" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable-v24/ic_register_bg.xml" value="0.12962962962962962" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable-v24/ic_verify_bg.xml" value="0.12962962962962962" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable/bg_box.xml" value="0.568359375" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable/edit_text_bg.xml" value="0.12777777777777777" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable/ic_login_bg.xml" value="0.13148148148148148" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable/ic_register_bg.xml" value="0.3534218590398366" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable/login_btn_bg.xml" value="0.3534218590398366" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/drawable/vie_bg.xml" value="0.1" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout-v21/activity_sign_up.xml" value="0.25" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_ajouter_telephone.xml" value="0.25" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_home.xml" value="0.22" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_liste_tel.xml" value="0.33" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout-v21/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_home.xml" value="0.20462962962962963" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_update_user.xml" value="0.2" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/activity_verify.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/login_tab_fragement.xml" value="0.22" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/siginupacitivity.xml" value="0.1" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/layout/user_item.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/GestionDeTelephone/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1287037037037037" />
+        <entry key="..\:/Users/assil/AndroidStudioProjects/barcha/Gestion-de-magasin/app/src/main/res/drawable-v24/login_btn_bg.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/assil/AndroidStudioProjects/barcha/Gestion-de-magasin/app/src/main/res/drawable/ic_register_bg.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/assil/AndroidStudioProjects/barcha/Gestion-de-magasin/app/src/main/res/layout-v21/activity_sign_up.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/assil/AndroidStudioProjects/barcha/Gestion-de-magasin/app/src/main/res/layout/activity_main.xml" value="0.23278985507246377" />
+        <entry key="..\:/Users/assil/AndroidStudioProjects/barcha/Gestion-de-magasin/app/src/main/res/layout/activity_update_user.xml" value="0.2" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

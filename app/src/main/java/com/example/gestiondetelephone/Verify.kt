@@ -4,7 +4,6 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telephony.PhoneNumberUtils.formatNumber
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -18,19 +17,15 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_verify.*
-import java.lang.StringBuilder
-import java.text.DecimalFormat
 
 class Verify : AppCompatActivity(), TextWatcher {
     val userArrayList = mutableListOf<User>()
     lateinit var auth: FirebaseAuth
-    lateinit var  number : String
+    lateinit var number: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verify)
-
 
 
         auth = FirebaseAuth.getInstance()
@@ -52,12 +47,14 @@ class Verify : AppCompatActivity(), TextWatcher {
                     storedVerificationId.toString(), otp
                 )
                 signInWithPhoneAuthCredential(credential)
-            }else if (otp != storedVerificationId)
+            }
+            // el if hedhi lkolha zeyda ya iheb el storedVerificationId 7aja o5ra mahiech nafsha el otp
+            /*else if (otp != storedVerificationId)
             {
                 Toast.makeText(this, "Enter a valid OTP", Toast.LENGTH_SHORT).show()
             }
 
-            else {
+            */ else {
                 Toast.makeText(this, "Enter OTP", Toast.LENGTH_SHORT).show()
             }
 
@@ -65,8 +62,6 @@ class Verify : AppCompatActivity(), TextWatcher {
 
         init()
     }
-
-
 
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
@@ -83,7 +78,7 @@ class Verify : AppCompatActivity(), TextWatcher {
                     getUserData()
 
 // ...
-                } else  {
+                } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     Toast.makeText(
                         this,
@@ -98,45 +93,60 @@ class Verify : AppCompatActivity(), TextWatcher {
             }
 
 
-
     }
 
 
     private fun getUserData() {
 
-        var dbref = FirebaseDatabase.getInstance().getReference("Tel").child("Users")
+        //table users mahiech child mta3 table Tel
+        var dbref = FirebaseDatabase.getInstance().getReference("Users")
 
         dbref.addValueEventListener(object : ValueEventListener {
 
-            override fun onDataChange(snapshot: DataSnapshot) = if (snapshot.exists()){
-                userArrayList.clear()
+            override fun onDataChange(snapshot: DataSnapshot) {
 
-                for (userSnapshot in snapshot.children){
-                    for (data in userArrayList)
-                    {
+                if (snapshot.exists()) {
+                    userArrayList.clear()
 
-                        {
+                    for (userSnapshot in snapshot.children) {
+                        val user = userSnapshot.getValue(User::class.java)
+                        userArrayList.add(user!!)
 
-                        }
                     }
-                    
+
+
+                    if (userArrayList.isEmpty()) {
+
+                        var intent = Intent(applicationContext, UpdateUser::class.java)
+                        startActivity(intent)
+                        Toast.makeText(applicationContext,
+                            "you have missing info you need to need complete it here",
+                            Toast.LENGTH_SHORT).show()
+
+                    } else {
+
+                        for (user in userArrayList) {
+                            if (user.numTel!!.toString() == number) {
+                                var intent = Intent(applicationContext, listeTel::class.java)
+                                startActivity(intent)
+                                finishAffinity()
+                            }
+                        }
+
+                        var intent = Intent(applicationContext, UpdateUser::class.java)
+                        startActivity(intent)
+                        Toast.makeText(applicationContext,
+                            "you have missing info you need to need complete it here",
+                            Toast.LENGTH_SHORT).show()
+                    }
+
 
                 }
-
-
-
-
-            }else {
-
-                var intent = Intent(applicationContext, updateUser::class.java)
-                startActivity(intent)
-                Toast.makeText(applicationContext, "you have missing info you need to need complete it here", Toast.LENGTH_SHORT).show()
-
             }
 
-            override fun onCancelled(error: DatabaseError){
-                if (error != null )
-                {
+
+            override fun onCancelled(error: DatabaseError) {
+                if (error != null) {
 
                 }
             }
@@ -145,7 +155,6 @@ class Verify : AppCompatActivity(), TextWatcher {
         })
 
     }
-
 
 
     private fun init() {
@@ -162,7 +171,6 @@ class Verify : AppCompatActivity(), TextWatcher {
         codeSix.tag = true
 
     }
-
 
 
     override fun onKeyUp(keyCode: Int, event: KeyEvent?): Boolean {

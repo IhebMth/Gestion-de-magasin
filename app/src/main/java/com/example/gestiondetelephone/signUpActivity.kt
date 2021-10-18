@@ -1,6 +1,5 @@
 package com.example.gestiondetelephone
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,7 +13,6 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_main.loginButton
 import kotlinx.android.synthetic.main.activity_main.signUpButton
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
